@@ -19,7 +19,7 @@ const urlSchema = new mongoose.Schema(
     },
   },
   {
-    Timestamp: true,
+    timestamps: true,
   }
 );
 
