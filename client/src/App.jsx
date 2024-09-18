@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+
 
 function App() {
   return (
-    <div className='bg-red-500'>App</div>
+    <div>
+
+    </div>
   )
 }
 
