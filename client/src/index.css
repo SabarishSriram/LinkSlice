@@ -3,12 +3,13 @@
 @tailwind utilities;
 @layer base {
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 }
-body{
-  background-image: url('./assets/main.png');
-  background-size:cover;
+body {
+  height: 100vh;
+  background-image: url("./assets/main.png");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
 }
