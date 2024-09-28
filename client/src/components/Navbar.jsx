@@ -16,7 +16,7 @@ function Navbar() {
           </Button>
         </a>
         <div>
-          <Button className="bg-[#c118ff] px-3 md:px-4 lg:px-6 py-5 font-bold">My Links</Button>
+          <Button className="bg-[#793fff] px-3 md:px-4 lg:px-6 py-5 font-bold">My Links</Button>
         </div>
       </div>
     </div>
