@@ -3,22 +3,34 @@ import { MdContentCopy } from "react-icons/md";
 
 function DialogForm() {
   return (
-    <div className="flex flex-col w-full h-full bg-red-400 items-center justify-center ">
-      <div className="flex items-center justify-start mt-3 w-full gap-10  ">
-        <p className="text-white font-semibold pr-5  text-lg">Original</p>
-        <input type="text" className="border-none box-border focus:outline-none px-3 py-3 w-72 bg-[#181f29] rounded-lg text-white " />
+    <div className="flex flex-col justify-center gap-6 w-full h-full bg-transparent">
+      {/* First Row for "Original" */}
+      <div className="flex items-center justify-center w-full gap-6">
+        <p className="text-white font-semibold pr-4 text-lg leading-none">
+          Original
+        </p>
+        <a
+          type="text"
+          className="border-none box-border focus:outline-none px-3 py-6 w-80 bg-[#181f29] rounded-lg text-white"
+        ></a>
         <button>
           <MdContentCopy className="text-xl text-white" />
         </button>
       </div>
-      <div className="flex mt-3 gap-10 items-center">
-        <p className="text-white justify-start items-center font-semibold text-lg">Shortened</p>
-        <input type="text" className="border-none box-border focus:outline-none px-3 py-3 w-72 bg-[#181f29] rounded-lg text-white " />
+
+      {/* Second Row for "Shortened" */}
+      <div className="flex items-center justify-center w-full mt-3 gap-6">
+        <p className="text-white font-semibold text-lg leading-none">
+          Shortened
+        </p>
+        <a
+          type="text"
+          className="border-none box-border focus:outline-none px-3 py-6 w-80 bg-[#181f29] rounded-lg text-white"
+        ></a>
         <button>
           <MdContentCopy className="text-xl text-white" />
         </button>
       </div>
-      
     </div>
   );
 }

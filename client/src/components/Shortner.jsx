@@ -3,6 +3,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { IoIosLink } from "react-icons/io";
 import { z } from "zod";
+import { TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import {
   Dialog,
   DialogContent,
@@ -12,6 +13,10 @@ import {
   DialogTrigger,
 } from "../components/ui/dialog";
 import DialogForm from "./DialogForm";
+import { Tabs } from "@radix-ui/react-tabs";
+import {} from '../assets/Swirl.png'
+import axios from "axios";
+
 
 function Shortner() {
   const [fullUrl, setfullUrl] = useState("https://google.com");
@@ -26,12 +31,17 @@ function Shortner() {
     fullUrl: fullUrl,
   };
 
-  const handleclick = () => {
+  const handleclick = async() => {
     try {
       console.log(linkSchema.parse(test));
       setdialog(true);
       setvalidation("");
-      console.log(dialog);
+
+      const response= await axios.post("http://localhost:3000/api",{
+        fullUrl:fullUrl
+      })
+      console.log(response.data);
+
     } catch (error) {
       setdialog(false);
       setvalidation("Invalid Url");
@@ -70,7 +80,13 @@ function Shortner() {
           Shorten Now!
         </button>
         <Dialog className="w-full h-full"  open={dialog} onOpenChange={setdialog}>
-          <DialogContent className="bg-[#0B0F1B] p-10  border-none rounded-lg shadow-lg">
+          <DialogTitle className="hidden"/>
+          <DialogContent className=" bg-[#0B0F1B] bg-cover bg-center flex flex-col  h-96 max-w-2xl max-h-[90vh]  border-none rounded-xl shadow-xl">
+          <Tabs defaultValue="links" className="w-fit dark ">
+            <TabsList className="">
+              <TabsTrigger className="text-white font-semibold bg-black ml-5 text-xl" value="links">Links</TabsTrigger>
+            </TabsList>
+          </Tabs>
             <DialogDescription className="w-full h-full">
               <DialogForm/>
             </DialogDescription>

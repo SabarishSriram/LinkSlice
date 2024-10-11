@@ -9,7 +9,7 @@ function Navbar() {
         LinkSlice
       </h1>
       <div className="flex gap-2">
-        <a href="https://github.com/SabarishSriram/LinkSlice">
+        <a target="_blank" href="https://github.com/SabarishSriram/LinkSlice">
           <Button className="bg-[#212121] md:gap-3 lg:gap-4 gap-2 md:px-4 px-3 py-5 font-bold">
             <SiGithub size={20} />
             GitHub

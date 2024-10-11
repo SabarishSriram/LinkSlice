@@ -13,3 +13,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+DialogContent{
+  background-image: url("./assets/Swirl.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
