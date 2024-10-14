@@ -20,3 +20,22 @@ DialogContent{
   background-position: center;
 
 }
+/* .custom-scrollbar::-webkit-scrollbar {
+  width: 20px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #181f29; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 2pc; 
+  border: 3px solid #181f29; 
+} */
+.custom-scrollbar {
+  scrollbar-width: medium;
+  scrollbar-color: #000000 #181f29;
+  scroll-behavior: smooth;
+  
+}

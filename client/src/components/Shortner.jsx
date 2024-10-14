@@ -13,11 +13,13 @@ import { Tabs } from "@radix-ui/react-tabs";
 import axios from "axios";
 import { serverUrl } from "@/helpers/constant";
 import { linkSchema } from "@/helpers/formSchema";
+import { data } from "autoprefixer";
 
 function Shortner() {
-  const [fullUrl, setfullUrl] = useState("");
+  const [fullUrl, setfullUrl] = useState("https://google.com");
   const [validation, setvalidation] = useState("");
   const [dialog, setdialog] = useState(false);
+  const [data, setdata] = useState([]);
 
   const test = {
     fullUrl: fullUrl,
@@ -29,10 +31,12 @@ function Shortner() {
       const response = await axios.post(`${serverUrl}`, {
         fullUrl: fullUrl,
       });
-      const data = response.data;
+      let data = response.data;
+      setdata(data);
       console.log(data);
       setvalidation("");
       setdialog(true);
+
     } catch (error) {
       setdialog(false);
       if (error.response && error.response.status == 409) {
@@ -89,7 +93,7 @@ function Shortner() {
               </TabsList>
             </Tabs>
             <DialogDescription className="w-full h-full">
-              <DialogForm />
+              <DialogForm data={data} />
             </DialogDescription>
           </DialogContent>
         </Dialog>
