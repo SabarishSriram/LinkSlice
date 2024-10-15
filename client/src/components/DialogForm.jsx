@@ -12,7 +12,7 @@ function DialogForm({ data }) {
       description: text,
       status: "success",
       duration: 3000,
-      isClosable: true,
+      isclosable: true,
       className:
         "bg-gradient-to-r from-[#1a00c8] to-[#a200ff] text-white border-none",
     });

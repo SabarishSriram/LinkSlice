@@ -36,7 +36,6 @@ function Shortner() {
       console.log(data);
       setvalidation("");
       setdialog(true);
-
     } catch (error) {
       setdialog(false);
       if (error.response && error.response.status == 409) {
