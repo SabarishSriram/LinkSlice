@@ -9,6 +9,7 @@ import { nanoid } from "nanoid";
 const app = express();
 dotenv.config();
 connection();
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
