@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { SiGithub } from "react-icons/si";
 import axios from "axios";
@@ -20,11 +20,11 @@ function Navbar() {
 
   const handleclick = async () => {
     try {
+      setopen(true);
       const response = await axios.get(`${serverUrl}/info`);
       let Urldata = response.data;
       setUrldata(Urldata);
       seterror(false);
-      setopen(true);
     } catch (error) {
       if (error.response && error.response.status == 404) {
         seterror(true);
@@ -56,7 +56,13 @@ function Navbar() {
               <DialogTitle className="hidden" />
               <DialogHeader className="text-gray-200">All Links</DialogHeader>
               <DialogDescription className="hidden" />
-              {error ? <p className="text-center text-white font-semibold">No URL's Found</p> : <LinkTable data={Urldata} />}
+              {error ? (
+                <p className="text-center text-white font-semibold">
+                  No URL's Found
+                </p>
+              ) : (
+                <LinkTable data={Urldata} />
+              )}
             </DialogContent>
           </Dialog>
         </div>

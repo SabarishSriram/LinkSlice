@@ -17,8 +17,6 @@ import { useToast } from "@/hooks/use-toast";
 function LinkTable({ data }) {
   const { toast }=useToast()
   const [urls, setUrls] = useState(data);
-  console.log(data);
-  console.log(urls);
 
   const deleteUrl = async (id) =>{
     await axios.delete(`${serverUrl}/${id}`);

@@ -27,15 +27,14 @@ function Shortner() {
 
   const handleclick = async () => {
     try {
-      console.log(linkSchema.parse(test));
+      linkSchema.parse(test);
+      setdialog(true);
       const response = await axios.post(`${serverUrl}`, {
         fullUrl: fullUrl,
       });
       let data = response.data;
       setdata(data);
-      console.log(data);
       setvalidation("");
-      setdialog(true);
     } catch (error) {
       setdialog(false);
       if (error.response && error.response.status == 409) {
