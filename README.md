@@ -49,5 +49,3 @@ LinkSlice is a fullstack modern URL shortner made using React, TailwindCSS, Expr
 4. Run the development server:
    ```bash
    npm run dev
-  
-
