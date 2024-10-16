@@ -15,7 +15,7 @@ import { serverUrl } from "@/helpers/constant";
 import { linkSchema } from "@/helpers/formSchema";
 import Spinner from "./Spinner";
 function Shortner() {
-  const [fullUrl, setfullUrl] = useState("https://groww.in");
+  const [fullUrl, setfullUrl] = useState("");
   const [spinner, setspinner] = useState(false);
   const [dialog, setdialog] = useState(false);
   const [data, setdata] = useState([]);
