@@ -13,13 +13,13 @@ import { Tabs } from "@radix-ui/react-tabs";
 import axios from "axios";
 import { serverUrl } from "@/helpers/constant";
 import { linkSchema } from "@/helpers/formSchema";
-import { data } from "autoprefixer";
-
+import Spinner from "./Spinner";
 function Shortner() {
-  const [fullUrl, setfullUrl] = useState("https://google.com");
-  const [validation, setvalidation] = useState("");
+  const [fullUrl, setfullUrl] = useState("https://groww.in");
+  const [spinner, setspinner] = useState(false);
   const [dialog, setdialog] = useState(false);
   const [data, setdata] = useState([]);
+  const [validationmessage, setvalidationmessage] = useState(false);
 
   const test = {
     fullUrl: fullUrl,
@@ -28,20 +28,19 @@ function Shortner() {
   const handleclick = async () => {
     try {
       linkSchema.parse(test);
-      setdialog(true);
+      setvalidationmessage(false);
+      setspinner(true);
       const response = await axios.post(`${serverUrl}`, {
         fullUrl: fullUrl,
       });
       let data = response.data;
       setdata(data);
-      setvalidation("");
+      setdialog(true);
+      setspinner(false);
     } catch (error) {
+      setvalidationmessage(true);
       setdialog(false);
-      if (error.response && error.response.status == 409) {
-        setvalidation("This url already exists");
-      } else {
-        setvalidation("This is an invalid Url");
-      }
+      setspinner(false);
     }
   };
 
@@ -83,7 +82,7 @@ function Shortner() {
             <Tabs defaultValue="links" className="w-fit dark ">
               <TabsList className="">
                 <TabsTrigger
-                  className="text-white font-semibold bg-black ml-5 text-xl"
+                  className="text-[#793fff] px-2 py-1 rounded-md font-semibold bg-[#181f29] ml-5 text-xl"
                   value="links"
                 >
                   Links
@@ -96,8 +95,9 @@ function Shortner() {
           </DialogContent>
         </Dialog>
       </div>
-      <div>
-        <p className="text-center mt-3 text-red-600">{validation}</p>
+      <div className="flex text-red-600 justify-center mt-3">
+        <div>{spinner ? <Spinner /> : null}</div>
+        <p>{validationmessage ? "This is an Invalid URL" : null}</p>
       </div>
     </div>
   );

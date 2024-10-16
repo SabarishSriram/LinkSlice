@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import ParticleBackground from "./components/ParticleBackground";
 import Hero from "./components/Hero";
 import { Toaster } from "./components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <Toaster />
+      <Analytics id="F1QXZG0X5F" />
     </div>
   );
 }

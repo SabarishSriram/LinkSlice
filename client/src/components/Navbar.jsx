@@ -12,12 +12,12 @@ import {
 } from "@/components/ui/dialog";
 import LinkTable from "./LinkTable";
 import { DialogDescription } from "@radix-ui/react-dialog";
+import Spinner from "./Spinner";
 
 function Navbar() {
   const [open, setopen] = useState(false);
   const [Urldata, setUrldata] = useState([]);
   const [error, seterror] = useState(true);
-
   const handleclick = async () => {
     try {
       setopen(true);
@@ -34,7 +34,7 @@ function Navbar() {
   };
   return (
     <div className="flex justify-between items-center md:px-7 md:py-5 lg:px-8 lg:py-5 px-5 py-5">
-      <h1 className="text-2xl md:text-3xl bg-gradient-to-r from-[#793fff] to-[#c118ff] text-transparent bg-clip-text font-bold">
+      <h1 className="text-2xl md:text-3xl bg-gradient-to-r from-[#793fff] to-[#c118ff] text-transparent bg-clip-text font-bold select-none">
         LinkSlice
       </h1>
       <div className="flex gap-2">

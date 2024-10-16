@@ -30,7 +30,7 @@ function DialogForm({ data }) {
           href={data.fullUrl}
           target="_blank"
           type="text"
-          className="border-none text-[16px] box-border focus:outline-none px-3 py-2 md:py-5 w-full md:w-72 bg-[#181f29] rounded-lg text-white truncate"
+          className="border-none text-[16px] box-border focus:outline-none px-3 py-2 md:py-5 w-full md:w-96 bg-[#181f29] rounded-lg text-white truncate"
         >
           {data.fullUrl}
         </a>
@@ -52,7 +52,7 @@ function DialogForm({ data }) {
           target="_blank"
           href={`${serverUrl}/${data.shortUrl}`}
           type="text"
-          className="border-none text-[16px] box-border focus:outline-none px-3 py-2 md:py-5 w-full md:w-72 bg-[#181f29] rounded-lg text-white truncate"
+          className="border-none text-[16px] box-border focus:outline-none px-3 py-2 md:py-5 w-full md:w-96 bg-[#181f29] rounded-lg text-white truncate"
         >
           {`${serverUrl}/${data.shortUrl}`}
         </a>
