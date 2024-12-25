@@ -1,10 +1,10 @@
-import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import connection from "./src/config/dbConfig.js";
 import shortUrl from "./src/routes/shortUrl.js";
 import { nanoid } from "nanoid";
+import dotenv from "dotenv";
 
 const app = express();
 dotenv.config();
